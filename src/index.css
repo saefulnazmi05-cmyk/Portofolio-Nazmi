@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg-primary: #090606;
+  --color-bg-secondary: #120A0C;
+  --color-burgundy: #250B10;
+  --color-dark-red: #4A0D16;
+  --color-accent-red: #E31B35;
+  --color-cream: #EAD5BD;
+  --color-cream-secondary: #CDBAA9;
+  --color-muted-text: #A99B94;
+  --color-border-red: rgba(220, 60, 70, 0.25);
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "DM Sans", "Plus Jakarta Sans", sans-serif;
+  --font-signature: "Alex Brush", cursive;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #090606;
+}
+::-webkit-scrollbar-thumb {
+  background: #3D0A11;
+  border-radius: 9999px;
+  border: 1px solid rgba(227, 27, 53, 0.25);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E31B35;
+}
+
+/* Grain texture overlay */
+.bg-grain {
+  background-image: radial-gradient(rgba(227, 27, 53, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Editorial geometric grid background */
+.bg-grid-pattern {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(220, 60, 70, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(220, 60, 70, 0.04) 1px, transparent 1px);
+}
+
+/* Typography Helpers */
+.font-bebas {
+  font-family: "Bebas Neue", sans-serif;
+}
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+.font-dm {
+  font-family: "DM Sans", sans-serif;
+}
+.font-signature {
+  font-family: "Alex Brush", cursive;
+}
+
+/* Glow effects */
+.glow-red {
+  box-shadow: 0 0 45px -10px rgba(227, 27, 53, 0.4);
+}
+.glow-red-lg {
+  box-shadow: 0 0 90px -15px rgba(227, 27, 53, 0.5);
+}
+.glow-red-sm {
+  box-shadow: 0 0 20px -5px rgba(227, 27, 53, 0.35);
+}
+.text-glow-red {
+  text-shadow: 0 0 25px rgba(227, 27, 53, 0.6);
+}
+.text-glow-cream {
+  text-shadow: 0 0 35px rgba(234, 213, 189, 0.35);
+}
+
+/* Responsive typography fluid clamp */
+.fluid-portfolio-title {
+  font-size: clamp(4.5rem, 14.5vw, 15.5rem);
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
